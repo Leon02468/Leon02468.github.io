@@ -1,0 +1,197 @@
+/* =========================================================
+   PORTFOLIO THEME — NATURAL / NEUTRAL
+   ========================================================= */
+
+:root {
+    --color-background: #f3f1e9;
+    --color-panel: #fbfaf5;
+    --color-panel-soft: #e9e8dc;
+    --color-border: #d5d4c5;
+    --color-text: #28352d;
+    --color-muted: #687368;
+    --color-accent: #657b55;
+    --color-accent-dark: #40543a;
+    --color-highlight: #a87545;
+    --color-shadow: rgba(48, 61, 45, 0.08);
+
+    --container-width: 1040px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+a { color: var(--color-accent-dark); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3, p { margin-top: 0; }
+
+.container { width: min(var(--container-width), calc(100% - 36px)); margin: 0 auto; }
+.muted { color: var(--color-muted); }
+
+/* Navigation */
+.navbar {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; padding: 22px 0; border-bottom: 1px solid var(--color-border);
+}
+.brand { color: var(--color-text); font-weight: 700; letter-spacing: .1em; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 18px; font-size: 14px; }
+
+/* Hero */
+.hero {
+    display: grid; grid-template-columns: 1.4fr .7fr; align-items: center;
+    gap: 40px; padding: 75px 0;
+}
+.eyebrow { color: var(--color-accent); font-size: 12px; font-weight: 700; letter-spacing: .15em; }
+.hero h1 { margin: 14px 0; font-size: clamp(42px, 7vw, 68px); line-height: 1.04; }
+.role { color: var(--color-highlight); font-size: 18px; font-weight: 700; }
+.hero-description { max-width: 650px; font-size: 17px; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.button { display: inline-block; padding: 11px 17px; border-radius: 8px; font-weight: 700; transition: transform .2s, background .2s; }
+.button:hover { text-decoration: none; transform: translateY(-2px); }
+.button-primary { background: var(--color-accent-dark); color: #fffdf6; }
+.button-secondary { background: transparent; border: 1px solid var(--color-border); color: var(--color-text); }
+.avatar-frame {
+    display: grid; place-items: center; width: 280px; aspect-ratio: 1;
+    margin: 0 auto; padding: 12px; border: 1px solid var(--color-border);
+    border-radius: 28px; background: var(--color-panel); box-shadow: 0 14px 35px var(--color-shadow);
+}
+.avatar { display: block; width: 256px; height: 256px; max-width: 100%; object-fit: cover; border-radius: 20px; }
+
+/* Sections */
+.section { padding: 40px 0; border-top: 1px solid var(--color-border); }
+.section h2 { margin-bottom: 18px; font-size: 27px; }
+.section-description { margin-bottom: 20px; }
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.skill-card {
+    padding: 20px; border: 1px solid var(--color-border); border-radius: 13px;
+    background: var(--color-panel); box-shadow: 0 5px 16px var(--color-shadow);
+}
+.skill-card h3 { margin-bottom: 5px; color: var(--color-accent-dark); font-size: 16px; }
+.skill-card p { margin-bottom: 0; color: var(--color-muted); font-size: 13px; }
+
+/* Projects */
+.projects-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+.project-card {
+    min-width: 0; padding: 20px; border: 1px solid var(--color-border);
+    border-radius: 16px; background: var(--color-panel); box-shadow: 0 7px 22px var(--color-shadow);
+}
+.project-card h3 { margin: 5px 0; font-size: 22px; }
+.project-card p, .project-card li { color: var(--color-muted); font-size: 14px; }
+.project-card ul { padding-left: 20px; }
+.project-meta { color: var(--color-accent); font-size: 12px; font-weight: 700; letter-spacing: .08em; }
+
+
+/* Project Image Gallery */
+.project-gallery {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.project-gallery img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 9px;
+    border: 1px solid var(--color-border);
+}
+
+.project-main-image {
+    aspect-ratio: 16 / 9;
+}
+
+.project-sub-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.project-sub-images img {
+    aspect-ratio: 16 / 9;
+}
+.project-media {
+    margin: 22px 0 16px;
+}
+
+.media-heading {
+    margin-bottom: 9px;
+    color: var(--color-accent-dark);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .1em;
+
+}
+.video-frame { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 10px; background: #20251f; }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.game-demo-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 10px;
+
+    background-image: url("./Assets/Projects/Bee-Networld/preview.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.game-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 64px;
+    height: 64px;
+    border: none;
+    border-radius: 50%;
+
+    background: #40563d;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+
+    transition: transform 0.2s, background 0.2s;
+}
+
+.game-play-button:hover {
+    transform: translate(-50%, -50%) scale(1.12);
+    background: #526d4d;
+}
+
+.game-demo-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 14px 0; }
+.tag { padding: 3px 9px; border: 1px solid var(--color-border); border-radius: 20px; color: var(--color-muted); font-size: 11px; }
+.repository-link { display: inline-block; margin-top: 5px; }
+
+/* Experience / Contact / Footer */
+.experience-item { margin-bottom: 24px; }
+.experience-item h3 { margin-bottom: 4px; font-size: 17px; }
+.experience-item p { margin-bottom: 8px; }
+.contact-details p { margin-bottom: 7px; }
+.footer { padding: 30px 0; border-top: 1px solid var(--color-border); color: var(--color-muted); font-size: 13px; }
+
+@media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; padding: 50px 0; }
+    .projects-grid, .skills-grid { grid-template-columns: 1fr; }
+    .avatar-frame { width: 280px; max-width: 100%; }
+    .nav-links { gap: 10px; font-size: 12px; }
+}
